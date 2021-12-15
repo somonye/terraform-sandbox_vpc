@@ -66,6 +66,14 @@ resource "aws_subnet" "public"{
     }
 }
 
+resource "aws_route_table" "public" {
+    vpc_id = aws_vpc.this.id
+
+    tags ={
+        Name = "Sandbox VPC Public Route Table"
+    }
+}
+
 resource "aws_route" "public_to_igw" {
     route_table_id = aws_route_table.public.id
     destination_cidr_block = "0.0.0.0/0"
