@@ -38,7 +38,7 @@ resource "aws_internet_gateway" "this" {
 resource "aws_nat_gateway" "this" {
     # Only 1 NAT GW -- no redundancy for cost savings
     allocation_id = aws_eip.nat_gw.id
-    subnet_id = random_shuffle.nat_gw_subnet.result 
+    subnet_id = random_shuffle.nat_gw_subnet.result[0]
 
     tags = {
         Name = "Sandbox VPC NAT GW"
