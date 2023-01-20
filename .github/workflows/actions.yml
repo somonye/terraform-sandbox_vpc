@@ -3,7 +3,7 @@ name: Deploy VPC
 on:
   push:
     branches:
-      - [master,main]
+      - [master, main]
 
 jobs:
   tf_fmt:
