@@ -10,3 +10,18 @@ provider "aws" {
         }
     }
 }
+
+terraform {
+
+   backend "s3" {
+       bucket = "terraform-tfstate-freshboom"
+       key    = "terraform.tfstate"
+       region = "us-east-1"
+   }
+
+
+
+}
+
+//required_version = ">=0.14.9" 
+
